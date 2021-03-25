@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Déterminez votre poids : "
+        android:text="@string/d_terminez_votre_poids"
         android:textStyle="bold"
         android:textColor="#FF0000"
         android:gravity="center"
@@ -15,13 +15,13 @@
         android:id="@+id/poids"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Poids :"
+        android:hint="@string/poids"
         android:inputType="numberDecimal"
         />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Déterminez votre taille : "
+        android:text="@string/d_terminez_votre_taille"
         android:textStyle="bold"
         android:textColor="#FF0000"
         android:gravity="center"
@@ -30,7 +30,7 @@
         android:id="@+id/taille"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Taille :"
+        android:hint="@string/taille"
         android:inputType="numberDecimal"
         />
     <RadioGroup
@@ -44,20 +44,20 @@
             android:id="@+id/radio_metre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mètre"
+            android:text="@string/m_tre"
             />
         <RadioButton
             android:id="@+id/radio_centimetre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Centimètre"
+            android:text="@string/centim_tre"
             />
     </RadioGroup>
     <CheckBox
         android:id="@+id/commentaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Appréciation"
+        android:text="@string/appr_ciation"
         />
     <LinearLayout
         android:orientation="horizontal"
@@ -68,23 +68,22 @@
             android:id="@+id/calcul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculer l'IMC"
+            android:text="@string/calculer_l_imc"
             />
         <Button
             android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reset"
+            android:text="@string/reinitialiser"
             />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Résultat:" />
+        android:text="@string/r_sultat" />
     <TextView
         android:id="@+id/result"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="Vous devez cliquer sur le bouton « Calculer l'IMC » pour obtenir un
-résultat." />
+        android:text="@string/vous_devez_cliquer_sur_le_bouton_calculer_l_imc_pour_obtenir_un_r_sultat" />
 </LinearLayout>

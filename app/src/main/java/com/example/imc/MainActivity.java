@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup group = null;
     RadioButton radio = null;
     TextView result = null;
-    private final String texteInit = "Cliquez sur le bouton « Calculer l'IMC » pour obtenir un résultat.";
+
+    int texteInit = R.string.clique;
 
 
     @Override
@@ -62,19 +63,17 @@ public class MainActivity extends AppCompatActivity {
             float tValue = Float.valueOf(t);
             // Puis on vérifie que la taille est cohérente
             if(tValue <= 0)
-                Toast.makeText(MainActivity.this, "La taille doit être positive",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.taillePositive, Toast.LENGTH_SHORT).show();
             else {
                 float pValue = Float.valueOf(p);
                 if(pValue <= 0)
-                    Toast.makeText(MainActivity.this, "Le poids doit etre positif",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.poidPositif,Toast.LENGTH_SHORT).show();
                 else {
-                    // Si l'utilisateur a indiqué que la taille était en centimètres
-                    // On vérifie que la Checkbox sélectionnée est la deuxième à l'aide de son identifiant
+
                     if (group.getCheckedRadioButtonId() == R.id.radio_centimetre) tValue =
                             tValue / 100;
                     float imc = pValue / (tValue * tValue);
-                    String resultat="Votre IMC est " + imc+" . ";
+                    String resultat=getString(R.string.Imc) + imc+" . ";
                     if(commentaire.isChecked()) resultat += interpreteIMC(imc);
                     result.setText(resultat);
                 }
@@ -85,19 +84,19 @@ public class MainActivity extends AppCompatActivity {
     private String interpreteIMC(Float imc)
     {
         if(imc < 16.5)
-        { return "famine"; }
+        { return getString(R.string.famine); }
         else if (imc >= 16.5 && imc < 18.5)
-        { return "maigreur"; }
+        { return getString(R.string.maigreur); }
         else if (imc >= 18.5 && imc < 25)
-        { return "corpulence normale"; }
+        { return getString(R.string.corpulenceNormal); }
         else if (imc >= 25 && imc < 30)
-        { return "surpoids"; }
+        { return getString(R.string.surpids); }
         else if (imc >= 30 && imc < 35)
-        { return "obésité modérée"; }
+        { return getString(R.string.obesiteModere); }
         else if (imc >= 35 && imc < 40)
-        { return "obésité sévère"; }
+        { return getString(R.string.obesiteSevere); }
         else
-        {return "obésité morbide ou massive"; }
+        {return getString(R.string.obesiteMorbideMassive); }
 
 
     }
